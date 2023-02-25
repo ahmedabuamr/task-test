@@ -35,7 +35,7 @@ const SingleTodo: React.FC<{
 
 
     <form
-      onSubmit={(e) => handleEdit(e, todo.id)}
+     
 
       className={`todos__single`}
     >
@@ -46,12 +46,15 @@ const SingleTodo: React.FC<{
             <Accordion.Header>New post</Accordion.Header>
             <Accordion.Body>
               {edit ? (
+                <>
                 <input
                   value={editTodo}
                   onChange={(e) => setEditTodo(e.target.value)}
                   style={{ padding: "10px 20px", border: "1px solid #ccc" }}
-                  ref={inputRef}
+                 
                 />
+                <button type="submit" onClick={(e) => handleEdit(e, todo.id)} style={{background:"blue", color:"#fff", border:"1px solid blue", padding:"10px 15px"}}>Save</button>
+                </>
               ) :
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <span>{todo.todo}</span>
